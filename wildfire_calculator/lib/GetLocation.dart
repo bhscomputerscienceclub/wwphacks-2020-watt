@@ -7,7 +7,7 @@ Future<String> longitudeGetFuture() async {
   bool isLocationServiceEnabled = await Geolocator.isLocationServiceEnabled();
 
   if (!isLocationServiceEnabled) {
-    return null;
+    return 'No location Given';
   }
 
   Position position = await Geolocator.getCurrentPosition(
@@ -22,7 +22,7 @@ Future<String> latitudeGetFuture() async {
   bool isLocationServiceEnabled = await Geolocator.isLocationServiceEnabled();
 
   if (!isLocationServiceEnabled) {
-    return null;
+    return 'No location Given';
   }
 
   Position position = await Geolocator.getCurrentPosition(
@@ -32,7 +32,6 @@ Future<String> latitudeGetFuture() async {
 
   return position.latitude.toString();
 }
-
 
 /* class TextBox extends StatelessWidget {
    @override
