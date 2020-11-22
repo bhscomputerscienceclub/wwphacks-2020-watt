@@ -44,16 +44,11 @@ class WildfireValue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new FutureBuilder(
-        future: calculate(),
-        initialData: "Loading text..",
+        future: Calculate(),
+        initialData: "Calculating",
         builder: (BuildContext context, AsyncSnapshot<String> text) {
-          return Text(
-            text.data ?? 'Please Reload App',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 19.0,
-            ),
-          );
+          return Text(text.data ?? 'Please Reload App',
+              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 100));
         });
   }
 }

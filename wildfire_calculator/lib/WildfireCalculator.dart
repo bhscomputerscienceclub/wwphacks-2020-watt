@@ -2,7 +2,7 @@ import 'dart:math';
 import 'weather.dart';
 import 'vegetation.dart';
 
-Future<String> calculate() async {
+Future<String> Calculate() async {
   var te = await getWeatherData('temp');
   var hu = await getWeatherData('humidity');
   var wi = await getWeatherData('windSpeed');

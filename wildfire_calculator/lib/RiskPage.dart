@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wildfire_calculator/WildfireCalculator.dart';
 import 'futureBuilders.dart';
 
 class RiskPage extends StatelessWidget {
@@ -9,10 +10,7 @@ class RiskPage extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
-              Text(
-                '5',
-                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 100),
-              ),
+              WildfireValue(),
               Padding(
                   padding: EdgeInsets.fromLTRB(0, 150, 0, 0),
                   child: ElevatedButton(
