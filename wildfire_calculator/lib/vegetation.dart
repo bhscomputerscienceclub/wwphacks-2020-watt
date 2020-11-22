@@ -52,5 +52,5 @@ Future<double> getVegetation() async {
     vegTotal += _vegList[i];
   }
   print(vegTotal);
-  return vegTotal;
+  return vegTotal/100;
 }

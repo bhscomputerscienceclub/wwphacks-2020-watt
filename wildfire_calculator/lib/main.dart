@@ -4,7 +4,7 @@ import 'package:wildfire_calculator/GetLocation.dart';
 import 'package:wildfire_calculator/prevention.dart';
 import './weather.dart';
 import './vegetation.dart';
-import 'WildFireRiskPage.dart';
+import 'RiskPage.dart';
 
 void main() {
   runApp(MyApp());
