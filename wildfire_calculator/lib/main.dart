@@ -6,11 +6,8 @@ import 'package:wildfire_calculator/prevention.dart';
 import './weather.dart';
 import './vegetation.dart';
 import 'RiskPage.dart';
-<<<<<<< Updated upstream
 import './WildfireCalculator.dart';
-=======
 import 'Route_Generator.dart';
->>>>>>> Stashed changes
 
 void main() {
   runApp(MyApp());
@@ -23,10 +20,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int selectedPage = 1;
-<<<<<<< Updated upstream
-
-  final _pageOptions = [Prevention(), RiskPage(), Preperation()];
-=======
 
   final _pageOptions = [Prevention(), RiskPage(), Preperation()];
 
@@ -35,7 +28,6 @@ class _MyAppState extends State<MyApp> {
     'Wildfire Risk in Your Area',
     'Preperation'
   ];
->>>>>>> Stashed changes
 
   @override
   Widget build(BuildContext context) {

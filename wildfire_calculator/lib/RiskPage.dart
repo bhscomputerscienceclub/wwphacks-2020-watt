@@ -4,16 +4,6 @@ import 'futureBuilders.dart';
 class RiskPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-<<<<<<< Updated upstream
-    return Center(
-        child: Column(
-          children: [
-            // TextBox(),
-          ],
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
-      );
-=======
     return Padding(
         padding: EdgeInsets.fromLTRB(0, 150, 0, 0),
         child: Center(
@@ -35,6 +25,5 @@ class RiskPage extends StatelessWidget {
             ],
           ),
         ));
->>>>>>> Stashed changes
   }
 }
