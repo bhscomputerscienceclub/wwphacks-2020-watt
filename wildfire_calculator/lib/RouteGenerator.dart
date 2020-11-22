@@ -6,6 +6,8 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (BuildContext context) => MainPage());
+      case '0':
+        return MaterialPageRoute(builder: (BuildContext context) => MainPage());
     }
   }
 }

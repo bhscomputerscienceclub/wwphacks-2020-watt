@@ -6,18 +6,15 @@ import './vegetation.dart';
 
 void main() {
   runApp(MyApp());
-  getWeatherData('temp').then((value) {
-    print(value);
-  });
-  getVegetation().then((value) {
-    print(value);
-  });
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(color: Colors.orange),
+      ),
       initialRoute: '/',
       onGenerateRoute: RouteGenerator.generateRoute,
     );
