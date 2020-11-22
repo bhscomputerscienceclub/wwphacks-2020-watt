@@ -10,7 +10,7 @@ class TextBox extends StatelessWidget {
       initialData: "Loading text..",
       builder: (BuildContext context, AsyncSnapshot<String> text) {
         return Text(
-            text.data,
+            text.data??'Please Reload App',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 19.0,
