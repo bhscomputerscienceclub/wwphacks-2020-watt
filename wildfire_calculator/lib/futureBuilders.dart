@@ -45,7 +45,7 @@ class WildfireValue extends StatelessWidget {
   Widget build(BuildContext context) {
     return new FutureBuilder(
         future: Calculate(),
-        initialData: "Calculating",
+        initialData: "...",
         builder: (BuildContext context, AsyncSnapshot<String> text) {
           return Text(text.data ?? 'Please Reload App',
               style: TextStyle(fontWeight: FontWeight.w900, fontSize: 100));

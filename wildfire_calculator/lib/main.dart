@@ -24,9 +24,9 @@ class _MyAppState extends State<MyApp> {
   final _pageOptions = [Prevention(), RiskPage(), Preperation()];
 
   final _pageTitles = [
-    'Prevention',
+    'Ways to Prevent a Wildfire',
     'Wildfire Risk in Your Area',
-    'Preperation'
+    'Ways to Prepare for a Wildfire'
   ];
 
   @override
