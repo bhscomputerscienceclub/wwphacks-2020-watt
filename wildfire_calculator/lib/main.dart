@@ -1,6 +1,7 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:wildfire_calculator/GetLocation.dart';
+import 'package:wildfire_calculator/preperation.dart';
 import 'package:wildfire_calculator/prevention.dart';
 import './weather.dart';
 import './vegetation.dart';
@@ -21,7 +22,8 @@ int selectedPage = 1;
 
     final _pageOptions = [
       Prevention(),
-      WildFireRiskPage(),
+      RiskPage(),
+      Preperation()
     ];
 
 
