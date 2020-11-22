@@ -12,7 +12,7 @@ class BottomBar extends StatelessWidget {
         TabItem(icon: Icons.local_fire_department, title: 'Add'),
       ],
       cornerRadius: 10,
-      style: TabStyle.fixed,
+      style: TabStyle.react,
     );
   }
 }
