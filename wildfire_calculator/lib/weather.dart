@@ -7,7 +7,7 @@ import 'package:wildfire_calculator/GetLocation.dart';
 Future<String> getWeatherData(String string) async {
   String _lon = '&lon=' + (await longitudeGetFuture());
   String _lat = 'lat=' + (await latitudeGetFuture());
-  String _key = '&appid=307072759790d30f7f1aff49b491b622&units=metric';
+  String _key = '&appid=307072759790d30f7f1aff49b491b622&units=Imperial';
   String _start = 'https://api.openweathermap.org/data/2.5/weather?';
   print(Uri.encodeFull(_start + _lat + _lon + _key));
   var _response = await http.get(Uri.encodeFull(_start + _lat + _lon + _key),

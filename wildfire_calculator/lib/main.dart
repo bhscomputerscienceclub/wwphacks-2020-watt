@@ -5,7 +5,7 @@ import './weather.dart';
 
 void main() {
   runApp(MyApp());
-  getWeatherData('weatherMain').then((value) {
+  getWeatherData('temp').then((value) {
     print(value);
   });
 }
