@@ -6,6 +6,7 @@ import './vegetation.dart';
 
 void main() {
   runApp(MyApp());
+  getVegetation();
 }
 
 class MyApp extends StatelessWidget {

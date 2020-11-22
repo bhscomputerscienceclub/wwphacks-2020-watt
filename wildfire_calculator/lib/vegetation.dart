@@ -16,7 +16,7 @@ Future<String> getFips() async {
   return _data['results'][0]['county_fips'];
 }
 
-Future<double> getVegetation() async {
+Future<Map> getVegetationData() async {
   String _end = '&level=class';
   var _fips = await getFips();
   String _start =
@@ -26,26 +26,53 @@ Future<double> getVegetation() async {
       headers: {'accept': 'application/json'});
   print(_response.body);
   var _data = (jsonDecode(_response.body));
-  var _agriVeg =
-      _data['hits']['hits'][1]['_source']['properties']['percent_area'];
-  print(_agriVeg);
-  var _shrubVeg =
-      _data['hits']['hits'][3]['_source']['properties']['percent_area'];
-  print(_shrubVeg);
-  var _naturalVeg =
-      _data['hits']['hits'][6]['_source']['properties']['percent_area'];
-  print(_naturalVeg);
-  var _forest =
-      _data['hits']['hits'][7]['_source']['properties']['percent_area'];
-  print(_forest);
-  var _vasRockVeg =
-      _data['hits']['hits'][9]['_source']['properties']['percent_area'];
-  print(_vasRockVeg);
-  var _opRockVeg =
-      _data['hits']['hits'][10]['_source']['properties']['percent_area'];
-  print(_opRockVeg);
-  var totalVeg =
-      _agriVeg + _shrubVeg + _naturalVeg + _forest + _vasRockVeg + _opRockVeg;
-  print(totalVeg);
-  return (totalVeg.toDouble());
+  return _data;
+  // var _agriVeg =
+  //     _data['hits']['hits'][1]['_source']['properties']['percent_area'];
+  // print(_agriVeg);
+  // var _shrubVeg =
+  //     _data['hits']['hits'][3]['_source']['properties']['percent_area'];
+  // print(_shrubVeg);
+  // var _naturalVeg =
+  //     _data['hits']['hits'][6]['_source']['properties']['percent_area'];
+  // print(_naturalVeg);
+  // var _forest =
+  //     _data['hits']['hits'][7]['_source']['properties']['percent_area'];
+  // print(_forest);
+  // var _vasRockVeg =
+  //     _data['hits']['hits'][9]['_source']['properties']['percent_area'];
+  // print(_vasRockVeg);
+  // var _opRockVeg =
+  //     _data['hits']['hits'][10]['_source']['properties']['percent_area'];
+  // print(_opRockVeg);
+  // var totalVeg =
+  //     _agriVeg + _shrubVeg + _naturalVeg + _forest + _vasRockVeg + _opRockVeg;
+  // print(totalVeg);
+  // return (totalVeg.toDouble());
+}
+
+Future<double> getVegetation() async {
+  var _data = await getVegetationData();
+  var _y = 0;
+  var _x;
+  var _vegList = [];
+  double vegTotal = 0;
+  for (_x in _data['hits']['hits']) {
+    if (_data['hits']['hits'][_y]['_source']['properties']['nvcs_name']
+                .indexOf('Vegetation') !=
+            -1 ||
+        _data['hits']['hits'][_y]['_source']['properties']['nvcs_name']
+                .indexOf('Forest') !=
+            -1) {
+      _vegList.add(
+          _data['hits']['hits'][_y]['_source']['properties']['percent_area']);
+    }
+    _y++;
+  }
+  print(_vegList);
+  for (int i = 0; i < _vegList.length; i++) {
+    vegTotal += _vegList[i];
+  }
+  print(vegTotal);
+  return vegTotal;
 }

@@ -11,7 +11,6 @@ class BottomBar extends StatelessWidget {
         TabItem(icon: Icons.warning_rounded, title: 'Home'),
         TabItem(icon: Icons.local_fire_department, title: 'Add'),
       ],
-      cornerRadius: 10,
       style: TabStyle.react,
     );
   }
