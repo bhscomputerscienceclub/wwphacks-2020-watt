@@ -7,7 +7,7 @@ class RiskPage extends StatelessWidget {
     return Center(
         child: Column(
           children: [
-            TextBox(),
+            // TextBox(),
           ],
           mainAxisAlignment: MainAxisAlignment.center,
         ),

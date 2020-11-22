@@ -28,7 +28,6 @@ Future<String> latitudeGetFuture() async {
   Position position = await Geolocator.getCurrentPosition(
       desiredAccuracy: LocationAccuracy.high);
 
-  print(position);
 
   return position.latitude.toString();
 }

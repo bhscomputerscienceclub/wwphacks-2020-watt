@@ -9,7 +9,6 @@ Future<String> getFips() async {
   String _lon = '&lon=' + (await longitudeGetFuture());
   String _start = 'https://geo.fcc.gov/api/census/area?';
   String _end = '&format=json';
-  print(_start + _lat + _lon + _end);
   var _response = await http.get(Uri.encodeFull(_start + _lat + _lon + _end),
       headers: {'accept': 'application/json'});
   var _data = (jsonDecode(_response.body));
@@ -21,15 +20,13 @@ Future<Map> getVegetationData() async {
   var _fips = await getFips();
   String _start =
       'https://api.sciencebase.gov/bis-api/api/v1/nvcs/summary?feature_id=US County:fips:';
-  print(Uri.encodeFull(_start + _fips + _end));
   var _response = await http.get(Uri.encodeFull(_start + _fips + _end),
       headers: {'accept': 'application/json'});
-  print(_response.body);
   var _data = (jsonDecode(_response.body));
   return _data;
 }
 
-Future<double> getVegetation() async {
+Future<String> getVegetation() async {
   var _data = await getVegetationData();
   var _y = 0;
   var _x;
@@ -47,10 +44,8 @@ Future<double> getVegetation() async {
     }
     _y++;
   }
-  print(_vegList);
   for (int i = 0; i < _vegList.length; i++) {
     vegTotal += _vegList[i];
   }
-  print(vegTotal);
-  return vegTotal/100;
+  return (vegTotal/100).toString();
 }

@@ -6,10 +6,10 @@ import 'package:wildfire_calculator/prevention.dart';
 import './weather.dart';
 import './vegetation.dart';
 import 'RiskPage.dart';
+import './WildfireCalculator.dart';
 
 void main() {
   runApp(MyApp());
-  getVegetation();
 }
 
 class MyApp extends StatefulWidget {
@@ -18,18 +18,12 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-int selectedPage = 1;
+  int selectedPage = 1;
 
-    final _pageOptions = [
-      Prevention(),
-      RiskPage(),
-      Preperation()
-    ];
-
+  final _pageOptions = [Prevention(), RiskPage(), Preperation()];
 
   @override
   Widget build(BuildContext context) {
-    
     return MaterialApp(
         theme: ThemeData(
           appBarTheme: AppBarTheme(color: Colors.orange[800]),
