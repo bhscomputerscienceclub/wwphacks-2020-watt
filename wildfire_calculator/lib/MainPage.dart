@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:wildfire_calculator/weather.dart';
 import 'GetLocation.dart';
-import 'tryingFutureBuilder.dart';
+import 'futureBuilders.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -12,12 +13,6 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   String str = "loading";
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +21,7 @@ class _MainPageState extends State<MainPage> {
         body: Center(
           child: Column(
             children: [
-              Text('str'),
+              TextBox(),
             ],
             mainAxisAlignment: MainAxisAlignment.center,
           ),
