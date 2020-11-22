@@ -4,8 +4,6 @@ import './RouteGenerator.dart';
 import './weather.dart';
 
 void main() {
-  // getLocation();
-  // print(getLocation().location);
   runApp(MyApp());
   getWeatherData('weatherMain').then((value) {
     print(value);

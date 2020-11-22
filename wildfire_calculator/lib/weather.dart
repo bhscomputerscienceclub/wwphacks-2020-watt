@@ -5,14 +5,14 @@ import 'package:http/http.dart' as http;
 import 'package:wildfire_calculator/GetLocation.dart';
 
 Future<String> getWeatherData(String string) async {
-  String _lon = '&lon=' + getLocation().longitude.toString();
-  String _lat = 'lat=' + getLocation().latitude.toString();
+  String _lon = '&lon=' + (await longitudeGetFuture());
+  String _lat = 'lat=' + (await latitudeGetFuture());
   String _key = '&appid=307072759790d30f7f1aff49b491b622&units=metric';
   String _start = 'https://api.openweathermap.org/data/2.5/weather?';
+  print(Uri.encodeFull(_start + _lat + _lon + _key));
   var _response = await http.get(Uri.encodeFull(_start + _lat + _lon + _key),
       headers: {'accept': 'application/json'});
   var _data = (jsonDecode(_response.body));
-
   var _weatherMain = _data['weather'][0]['main']; //clouds
   var _weatherDescription =
       _data['weather'][0]['description']; //overcast clouds
