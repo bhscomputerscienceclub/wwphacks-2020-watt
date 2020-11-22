@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'GrtLocation.dart';
 
 class MainPage extends StatefulWidget {
   @override
@@ -9,10 +10,14 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Center(
-        child: Text('app'),
-      ),
-    );
+        appBar: AppBar(),
+        body: Center(
+          child: Column(
+            children: [
+              Text('hello'),
+            ],
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
+        ));
   }
 }
