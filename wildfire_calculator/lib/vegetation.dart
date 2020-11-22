@@ -27,28 +27,6 @@ Future<Map> getVegetationData() async {
   print(_response.body);
   var _data = (jsonDecode(_response.body));
   return _data;
-  // var _agriVeg =
-  //     _data['hits']['hits'][1]['_source']['properties']['percent_area'];
-  // print(_agriVeg);
-  // var _shrubVeg =
-  //     _data['hits']['hits'][3]['_source']['properties']['percent_area'];
-  // print(_shrubVeg);
-  // var _naturalVeg =
-  //     _data['hits']['hits'][6]['_source']['properties']['percent_area'];
-  // print(_naturalVeg);
-  // var _forest =
-  //     _data['hits']['hits'][7]['_source']['properties']['percent_area'];
-  // print(_forest);
-  // var _vasRockVeg =
-  //     _data['hits']['hits'][9]['_source']['properties']['percent_area'];
-  // print(_vasRockVeg);
-  // var _opRockVeg =
-  //     _data['hits']['hits'][10]['_source']['properties']['percent_area'];
-  // print(_opRockVeg);
-  // var totalVeg =
-  //     _agriVeg + _shrubVeg + _naturalVeg + _forest + _vasRockVeg + _opRockVeg;
-  // print(totalVeg);
-  // return (totalVeg.toDouble());
 }
 
 Future<double> getVegetation() async {
